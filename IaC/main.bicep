@@ -95,3 +95,14 @@ module webapp 'webapp.bicep' = {
     dbPassword: dbPassword
   }
 }
+
+// Create function infrastructure
+module function 'function.bicep' = {
+  name: '${appName}-func-${environmentName}-${uniqueString(rg.name)}'
+  scope: rg
+  params: {
+    appName: appName
+    branchName: branchName
+    environmentName: environmentName
+  }
+}
