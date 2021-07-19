@@ -107,7 +107,10 @@ jobs:
                          tag='${{ github.sha }}' \
                          dbUserName='${{ secrets.DBUSERNAME }}' \
                          dbPassword='${{ secrets.DBPASSWORD }}' \
-                         devEnv='${{ env.DEVENV }}'          
+                         devEnv='${{ env.DEVENV }}'      
+
+      - name: PSRule
+        uses: microsoft/ps-rule@v1.5.0
 
   deployDev:
     name: Deploy to Dev
